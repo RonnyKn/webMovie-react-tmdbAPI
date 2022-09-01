@@ -1,0 +1,17 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 5px;
+  margin: 5px 0;
+  background-color: black;
+  /* background-color: #282c34; */
+  border-radius: 10px;
+  position: relative;
+
+}
+
+.card:hover {
+  background-color: white;
+  color: black;
+}

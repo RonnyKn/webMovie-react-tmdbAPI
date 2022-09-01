@@ -8,11 +8,11 @@ const Trending = ({ movies, title }) => {
       <h1>{title}</h1>
       <Container>
         <Row>
-          <Col md={3}>
-            {movies.map((movie, index) => (
+          {movies.map((movie, index) => (
+            <Col md={3}>
               <MovieCard key={movie.id} {...movie} />
-            ))}
-          </Col>
+            </Col>
+          ))}
         </Row>
       </Container>
     </div>
