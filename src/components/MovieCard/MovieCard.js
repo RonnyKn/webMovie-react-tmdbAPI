@@ -3,7 +3,6 @@ import { Card, Modal } from 'react-bootstrap'
 import { useState } from 'react'
 
 const MovieCard = ({ title, poster_path, release_date, vote_average, overview }) => {
-  const imgUrl = 'https://image.tmdb.org/t/p/w500'
   const [show, setShow] = useState(false)
   const handleShow = () => {
     setShow(true)
@@ -15,7 +14,7 @@ const MovieCard = ({ title, poster_path, release_date, vote_average, overview })
     <div>
       <Card>
         <div >
-          <img src={imgUrl + poster_path} style={{ width: "14rem" }} alt="" />
+          <img src={process.env.REACT_APP_IMG_URL_W300 + poster_path} style={{ width: "14rem" }} alt="" />
           <h4>{title}</h4>
           <p>Release Date: {release_date}</p>
           <p>ImDb: {vote_average}</p>
@@ -28,7 +27,7 @@ const MovieCard = ({ title, poster_path, release_date, vote_average, overview })
               <Modal.Title></Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <img src={imgUrl + poster_path} alt="" />
+              <img src={process.env.REACT_APP_IMG_URL_W500 + poster_path} alt="" />
               <h4>Title: {title}</h4>
               <h4>Release: {release_date}</h4>
               <h4>Overview: {overview}</h4>

@@ -3,8 +3,8 @@ import './App.css';
 import Trending from './components/Trending/Trending';
 import NavigationBar from './components/Navbar/NavigationBar';
 
-const searchUrl = 'https://api.themoviedb.org/3/search/movie?api_key=9ed7a246b9dc5b5c41cfb3f454fa54c2&query='
-const baseUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=9ed7a246b9dc5b5c41cfb3f454fa54c2'
+// const searchUrl = 'https://api.themoviedb.org/3/search/movie?api_key=9ed7a246b9dc5b5c41cfb3f454fa54c2&query='
+// const baseUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=9ed7a246b9dc5b5c41cfb3f454fa54c2'
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
   const searchMovie = async (e) => {
     e.preventDefault(); //anti perilaku refresh button
     try {
-      const response = await fetch(`${searchUrl}${search}`)
+      const response = await fetch(`${process.env.REACT_APP_SEARCH_URL}${search}`)
       const data = await response.json();
       setMovies(data.results)
     }
@@ -34,7 +34,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch(baseUrl)
+    fetch(`${process.env.REACT_APP_BASE_URL}`)
       .then((response) => response.json())
       .then((data) => {
         setMovies(data.results)
