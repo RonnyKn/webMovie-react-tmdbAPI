@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Trending from './components/Trending/Trending';
 import NavigationBar from './components/Navbar/NavigationBar';
-
-// const searchUrl = 'https://api.themoviedb.org/3/search/movie?api_key=9ed7a246b9dc5b5c41cfb3f454fa54c2&query='
-// const baseUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=9ed7a246b9dc5b5c41cfb3f454fa54c2'
+import axios from 'axios';
 
 function App() {
 
@@ -16,12 +14,32 @@ function App() {
     setTitle('Search Movies')
   }
 
+  const fetchTrending = async () => {
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_BASE_URL}`
+    )
+    setMovies(data.results)
+  }
+
+  useEffect(() => {
+    fetchTrending()
+    // fetch(`${process.env.REACT_APP_BASE_URL}`)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setMovies(data.results)
+    //   })
+  }, [])
+
   const searchMovie = async (e) => {
-    e.preventDefault(); //anti perilaku refresh button
+    e.preventDefault(); //button anti perilaku refresh page
     try {
-      const response = await fetch(`${process.env.REACT_APP_SEARCH_URL}${search}`)
-      const data = await response.json();
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_SEARCH_URL}${search}`
+      )
       setMovies(data.results)
+      // const response = await fetch(`${process.env.REACT_APP_SEARCH_URL}${search}`)
+      // const data = await response.json();
+      // setMovies(data.results)
     }
     catch (e) {
       console.log(e);
@@ -33,13 +51,7 @@ function App() {
     setSearch(data)
   }
 
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_BASE_URL}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setMovies(data.results)
-      })
-  }, [])
+
 
   return (
     <div className='App'>
