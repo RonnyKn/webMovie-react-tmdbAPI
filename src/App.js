@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
 import Trending from './components/Trending/Trending';
 import NavigationBar from './components/Navbar/NavigationBar';
 import axios from 'axios';
+import { Container } from 'react-bootstrap';
 
 function App() {
-
   const [movies, setMovies] = useState([])
   const [search, setSearch] = useState('')
   const [title, setTitle] = useState('Trending Movies')
@@ -51,20 +52,21 @@ function App() {
     setSearch(data)
   }
 
-
-
   return (
-    <div className='App'>
-      <NavigationBar
-        changeTitle={changeTitle}
-        search={search}
-        searchMovie={searchMovie}
-        handleChange={handleChange} />
-      <Trending
-        title={title}
-        movies={movies}
-      />
-    </div>
+    <>
+      <Container>
+        <NavigationBar
+          changeTitle={changeTitle}
+          search={search}
+          searchMovie={searchMovie}
+          handleChange={handleChange}
+        />
+        <Trending
+          title={title}
+          movies={movies}
+        />
+      </Container>
+    </>
   );
 }
 

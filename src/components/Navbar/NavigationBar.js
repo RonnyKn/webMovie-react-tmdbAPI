@@ -5,9 +5,9 @@ import './NavigationBar.css'
 const NavigationBar = ({ searchMovie, handleChange, search, changeTitle }) => {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="dark" variant='dark' expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#">myTMDB</Navbar.Brand>
+          <Navbar.Brand href="#"> <h3>myTMDB</h3> </Navbar.Brand>
           {/* <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="#action2">Link</Nav.Link> */}
           <Navbar.Toggle aria-controls="navbarScroll" />

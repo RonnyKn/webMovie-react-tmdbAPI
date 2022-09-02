@@ -5,8 +5,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 const Trending = ({ movies, title }) => {
   return (
     <div>
-      <h1>{title}</h1>
       <Container>
+        <h1>{title}</h1>
         <Row>
           {movies.map((movie, index) => (
             <Col md={3}>

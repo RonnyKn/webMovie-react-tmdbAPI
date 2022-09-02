@@ -1,17 +1,73 @@
+/* card */
 .card {
   display: flex;
-  flex-direction: column;
-  width: 200px;
+  width: 230px;
+  background-color: #282c34;
+  margin: 15px 0;
   padding: 5px;
-  margin: 5px 0;
-  background-color: black;
-  /* background-color: #282c34; */
-  border-radius: 10px;
+  border-radius: 20px;
   position: relative;
-
+  /* border: 2px solid black; */
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
 .card:hover {
   background-color: white;
   color: black;
+  transform: scale(1.05);
+  border: 2px solid black;
+}
+
+.card-image {
+  display: flex;
+  background-color: #282c34;
+  width: 210px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.card-image img {
+  border-radius: 10px;
+  width: 200px;
+}
+
+.card-content {
+  padding: 13px;
+}
+
+.card-p {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+/* modal */
+.modal-content {
+  display: flex;
+  position: relative;
+}
+
+.modal-image {
+  flex: 1;
+}
+
+.modal-body {
+  flex: 1;
+  flex-direction: column;
+  text-align: justify;
+
+}
+
+.modal-image img {
+  border-radius: 10px;
+  display: flex;
+  width: 100%;
+}
+
+/* button */
+.card-button {
+  margin: 0 auto;
 }
