@@ -1,5 +1,5 @@
 import './MovieCard.css'
-import { Button, Modal } from 'react-bootstrap'
+import { Badge, Button, Modal } from 'react-bootstrap'
 import { useState } from 'react'
 
 const MovieCard = ({ title, nama, poster_path, release_date, vote_average, overview, media_type, rilis }) => {
@@ -13,6 +13,9 @@ const MovieCard = ({ title, nama, poster_path, release_date, vote_average, overv
 
   return (
     <div className='card' style={{ background: 'black', borderRadius: '10px', padding: "7px 0" }}>
+      <Badge
+        className='movie-badge'
+        bg={vote_average >= 5.9 ? 'primary' : 'secondary'} >{vote_average.toFixed(1)}</Badge>
       <div className="card-image">
         <img src={process.env.REACT_APP_IMG_URL_W300 + poster_path} alt="" />
       </div>

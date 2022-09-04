@@ -18,6 +18,10 @@ body {
   padding: 0;
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 .button {
   border-radius: 34px;
   border: none;

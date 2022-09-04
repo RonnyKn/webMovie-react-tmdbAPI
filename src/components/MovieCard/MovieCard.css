@@ -13,7 +13,6 @@
 .card:hover {
   color: rgb(212, 212, 212);
   border: 2px solid rgb(212, 212, 212);
-
 }
 
 .card-image {
@@ -54,6 +53,12 @@
   justify-content: space-between;
 }
 
+.movie-badge {
+  position: absolute;
+  right: 0;
+  z-index: 101;
+}
+
 /* modal */
 .modal-content {
   display: flex;
@@ -84,4 +89,5 @@
   width: 110px;
   padding: 0;
   font-family: Gumela;
+  font-size: 14px;
 }
