@@ -2,7 +2,7 @@ import './MovieCard.css'
 import { Button, Modal } from 'react-bootstrap'
 import { useState } from 'react'
 
-const MovieCard = ({ title, poster_path, release_date, vote_average, overview }) => {
+const MovieCard = ({ title, nama, poster_path, release_date, vote_average, overview, media_type, rilis }) => {
   const [show, setShow] = useState(false)
   const handleShow = () => {
     setShow(true)
@@ -10,16 +10,17 @@ const MovieCard = ({ title, poster_path, release_date, vote_average, overview })
   const handleClose = () => {
     setShow(false)
   }
+
   return (
-    <div className='card'>
+    <div className='card' style={{ background: 'black', borderRadius: '10px', padding: "7px 0" }}>
       <div className="card-image">
         <img src={process.env.REACT_APP_IMG_URL_W300 + poster_path} alt="" />
       </div>
       <div className="card-content">
-        <h5>{title}</h5>
+        <h5 style={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{nama}</h5>
         <div className="card-p">
-          <p>ImDb: {vote_average}</p>
-          <p>{release_date}</p>
+          <p>{media_type === "tv" ? "Tv Series" : "Movie"}</p>
+          <p>{rilis}</p>
         </div>
       </div>
       <button className='button card-button' onClick={handleShow}>Show Details</button>
@@ -38,8 +39,8 @@ const MovieCard = ({ title, poster_path, release_date, vote_average, overview })
               <img src={process.env.REACT_APP_IMG_URL_W500 + poster_path} alt="" />
             </div>
             <div className="modal-body">
-              <p><strong>Title: <br /></strong>{title}</p>
-              <p><strong>Release: <br /></strong>{release_date}</p>
+              <p><strong>Title: <br /></strong>{nama}</p>
+              <p><strong>Release: <br /></strong>{rilis}</p>
               <p><strong>Overview: <br /></strong>{overview}</p>
               <p><strong>ImDb: <br /></strong>{vote_average}</p>
             </div>

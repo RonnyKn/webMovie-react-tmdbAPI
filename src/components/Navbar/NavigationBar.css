@@ -1,0 +1,16 @@
+.header {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0px 1px 5px black;
+  background-color: #39445a;
+  z-index: 100;
+
+}
+
+.n-brand {
+  text-decoration: none;
+  color: white;
+  font-family: Gumela;
+}

@@ -1,13 +1,18 @@
 import { Container, Navbar, Nav, Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './NavigationBar.css'
+
 // import {}
 
 const NavigationBar = ({ searchMovie, handleChange, search, changeTitle }) => {
   return (
-    <div>
-      <Navbar bg="dark" variant='dark' expand="lg">
+    <div className='header'>
+      <Navbar style={{ width: '100%' }} bg="dark" variant='dark' expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#"> <h3>myTMDB</h3> </Navbar.Brand>
+          <Navbar.Brand >
+            <Link to="/Home" className='n-brand'> <h3>myTMDB</h3> </Link>
+          </Navbar.Brand>
+          {/* onClick={() => window.scroll(0, 0)} */}
           {/* <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="#action2">Link</Nav.Link> */}
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -28,7 +33,7 @@ const NavigationBar = ({ searchMovie, handleChange, search, changeTitle }) => {
                 value={search}
                 onChange={handleChange}
               />
-              <Button onClick={changeTitle} type='submit' variant="outline-success">Search</Button>
+              <Button onClick={changeTitle} type='submit' variant="outline-light">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

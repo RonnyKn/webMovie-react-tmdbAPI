@@ -4,7 +4,7 @@ import './App.css';
 import Trending from './components/Trending/Trending';
 import NavigationBar from './components/Navbar/NavigationBar';
 import axios from 'axios';
-import { Container } from 'react-bootstrap';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 function App() {
   const [movies, setMovies] = useState([])
@@ -17,7 +17,7 @@ function App() {
 
   const fetchTrending = async () => {
     const { data } = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}`
+      `${process.env.REACT_APP_TRENDING}`
     )
     setMovies(data.results)
   }
@@ -54,7 +54,12 @@ function App() {
 
   return (
     <>
-      <Container>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            exact path="/" element={<Navigate to="/Home" />}  >
+          </Route>
+        </Routes>
         <NavigationBar
           changeTitle={changeTitle}
           search={search}
@@ -65,7 +70,7 @@ function App() {
           title={title}
           movies={movies}
         />
-      </Container>
+      </BrowserRouter>
     </>
   );
 }

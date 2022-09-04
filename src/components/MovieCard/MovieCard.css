@@ -2,40 +2,50 @@
 .card {
   display: flex;
   width: 230px;
-  background-color: #282c34;
   margin: 15px 0;
-  padding: 5px;
-  border-radius: 20px;
   position: relative;
-  /* border: 2px solid black; */
   font-size: 14px;
   box-sizing: border-box;
+  color: whitesmoke;
+
 }
 
 .card:hover {
-  background-color: white;
-  color: black;
-  transform: scale(1.05);
-  border: 2px solid black;
+  color: rgb(212, 212, 212);
+  border: 2px solid rgb(212, 212, 212);
+
 }
 
 .card-image {
   display: flex;
-  background-color: #282c34;
+  background-color: white;
   width: 210px;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
   padding: 5px;
+  overflow: hidden;
 }
 
 .card-image img {
   border-radius: 10px;
   width: 200px;
+  height: 300px;
+}
+
+
+.card:hover img {
+  transition: .3s ease;
+  transform: scale(1.1);
+
 }
 
 .card-content {
   padding: 13px;
+}
+
+.card-content h5 {
+  text-align: center;
 }
 
 .card-p {
@@ -70,4 +80,8 @@
 /* button */
 .card-button {
   margin: 0 auto;
+  margin-top: -20px;
+  width: 110px;
+  padding: 0;
+  font-family: Gumela;
 }
