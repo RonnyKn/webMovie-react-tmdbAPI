@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const MovieCard = ({ title, nama, poster_path, release_date, vote_average, overview, media_type, rilis }) => {
   const [show, setShow] = useState(false)
-  const handleShow = () => {
+  const handleShow = (e) => {
     setShow(true)
   }
   const handleClose = () => {
@@ -12,7 +12,9 @@ const MovieCard = ({ title, nama, poster_path, release_date, vote_average, overv
   }
 
   return (
-    <div className='card' style={{ background: 'black', borderRadius: '10px', padding: "7px 0" }}>
+    <div
+      className='card' style={{ background: 'black', borderRadius: '10px', padding: "7px 0" }}
+    >
       <Badge
         className='movie-badge'
         bg={vote_average >= 5.9 ? 'primary' : 'secondary'} >{vote_average.toFixed(1)}</Badge>
