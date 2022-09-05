@@ -10,14 +10,15 @@ function App() {
   const [movies, setMovies] = useState([])
   const [search, setSearch] = useState('')
   const [title, setTitle] = useState('Trending Movies')
+  const [page, setPage] = useState(1)
 
   const changeTitle = () => {
-    setTitle('Search Movies')
+    setTitle('Results Movies :')
   }
 
   const fetchTrending = async () => {
     const { data } = await axios.get(
-      `${process.env.REACT_APP_TRENDING}`
+      `${process.env.REACT_APP_TRENDING}&page=${page}`
     )
     setMovies(data.results)
   }
@@ -29,13 +30,13 @@ function App() {
     //   .then((data) => {
     //     setMovies(data.results)
     //   })
-  }, [])
+  }, [page])
 
   const searchMovie = async (e) => {
     e.preventDefault(); //button anti perilaku refresh page
     try {
       const { data } = await axios.get(
-        `${process.env.REACT_APP_SEARCH_URL}${search}`
+        `${process.env.REACT_APP_SEARCH_URL}${search}&page=1`
       )
       setMovies(data.results)
       // const response = await fetch(`${process.env.REACT_APP_SEARCH_URL}${search}`)
@@ -69,6 +70,8 @@ function App() {
         <Trending
           title={title}
           movies={movies}
+          page={page}
+          setPage={setPage}
         />
       </BrowserRouter>
     </>

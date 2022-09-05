@@ -1,8 +1,9 @@
 import './Trending.css'
 import MovieCard from '../MovieCard/MovieCard'
 import { Container, Row, Col } from 'react-bootstrap';
+import CustomPagination from '../CustomPagination/CustomPagination';
 
-const Trending = ({ movies, title }) => {
+const Trending = ({ movies, title, setPage, page }) => {
   return (
     <div className='trending'>
       <Container>
@@ -17,6 +18,9 @@ const Trending = ({ movies, title }) => {
             <h1 style={{ height: "100vh", color: "white", textAlign: "center" }}><em> Damn, Movies not found!</em></h1>
           }
         </Row>
+        <CustomPagination
+          page={page}
+          setPage={setPage} />
       </Container>
     </div>
   )
