@@ -34,24 +34,27 @@ const MovieCard = ({ title, nama, poster_path, release_date, vote_average, overv
         show={show}
         onHide={handleClose}
         className="modal"
+        size='lg'
+      // style={{ backgroundColor: 'ActiveBorder' }}
       >
         <Modal.Header>
           <Modal.Title>Movie Details</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="modal-content">
-            <div className="modal-image">
-              <img src={process.env.REACT_APP_IMG_URL_W500 + poster_path} alt="" />
-            </div>
-            <div className="modal-body">
-              <p><strong>Title: <br /></strong>{nama}</p>
-              <p><strong>Release: <br /></strong>{rilis}</p>
-              <p><strong>Overview: <br /></strong>{overview}</p>
-              <p><strong>ImDb: <br /></strong>{vote_average}</p>
+            <div className='modal-tes'>
+              <img src={process.env.REACT_APP_IMG_URL_W500 + poster_path} alt="" className="modal-image" />
+              <div className="modal-body">
+                <p><strong>Title: <br /></strong>{nama}</p>
+                <p><strong>Release: <br /></strong>{rilis}</p>
+                <p><strong>Overview: <br /></strong>{overview}</p>
+                <p><strong>ImDb: <br /></strong>{vote_average.toFixed(1)}</p>
+              </div>
             </div>
           </div>
         </Modal.Body>
         <Modal.Footer>
+          <Button variant='danger' >Watch Trailer</Button>
           <Button variant='secondary' onClick={handleClose}>Close</Button>
         </Modal.Footer>
       </Modal>

@@ -60,27 +60,36 @@
 }
 
 /* modal */
+.modal .modal-content {
+  background-color: #293349;
+  color: #fff;
+}
+
 .modal-content {
   display: flex;
   position: relative;
+  padding: 3px;
+}
+
+.modal-tes {
+  display: flex;
+
 }
 
 .modal-image {
-  flex: 1;
+  justify-content: center;
+  border: 3px solid rgb(81, 81, 82);
+  height: 440px;
+  flex: 5;
+  border-radius: 10px;
 }
 
 .modal-body {
   flex: 1;
   flex-direction: column;
   text-align: justify;
-
 }
 
-.modal-image img {
-  border-radius: 10px;
-  display: flex;
-  width: 100%;
-}
 
 /* button */
 .card-button {

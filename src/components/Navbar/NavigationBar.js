@@ -6,15 +6,14 @@ import './NavigationBar.css'
 
 const NavigationBar = ({ searchMovie, handleChange, search, changeTitle }) => {
   return (
-    <div className='header'>
-      <Navbar style={{ width: '100%' }} bg="dark" variant='dark' expand="lg">
+    <div >
+      <span className='header' onClick={() => window.scroll(0, 0)} >🎬 RON'S ENTERTAINMENT 🎥</span>
+
+      {/* <Navbar style={{ width: '100%' }} bg="dark" variant='dark' expand="lg">
         <Container fluid>
           <Navbar.Brand >
             <Link to="/Home" className='n-brand'> <h3>myTMDB</h3> </Link>
           </Navbar.Brand>
-          {/* onClick={() => window.scroll(0, 0)} */}
-          {/* <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link href="#action2">Link</Nav.Link> */}
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -37,7 +36,7 @@ const NavigationBar = ({ searchMovie, handleChange, search, changeTitle }) => {
             </Form>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar> */}
     </div>
   )
 }

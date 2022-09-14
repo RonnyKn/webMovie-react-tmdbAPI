@@ -4,6 +4,15 @@
   src: url("../src/fonts/Gumela Regular.otf");
 }
 
+.app {
+  min-height: 100vh;
+  background-color: #39445a;
+  color: white;
+  /* padding-top: 130px; */
+  padding-bottom: 70px;
+
+}
+
 h1,
 h5,
 h3 {
@@ -40,4 +49,10 @@ body {
   color: black;
   border: 1px solid black;
 
+}
+
+@media screen and (max-width: 700px) {
+  .app {
+    padding-top: 70px;
+  }
 }
